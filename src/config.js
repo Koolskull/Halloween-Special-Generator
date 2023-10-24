@@ -28,35 +28,28 @@ const outputJPEG = false; // if false, the generator outputs png's
 const startIndex = 0;
 
 const format = {
-  width: 512,
-  height: 512,
-  smoothing: true, // set to false when up-scaling pixel art.
+  width: 2800,
+  height: 2800,
+  smoothing: false, // set to false when up-scaling pixel art.
 };
 
 const background = {
   generate: true,
-  brightness: "80%",
+  brightness: "100%",
 };
 
 const layerConfigurations = [
   {
-    growEditionSizeTo: 10,
+    growEditionSizeTo: 22,
     namePrefix: "Series 2", // Use to add a name to Metadata `name:`
     layersOrder: [
-      { name: "Background" },
-      {
-        name: "Back Accessory",
-        // options: {
-        //   bypassDNA: true,
-        // },
-      },
-      { name: "Head" },
-      { name: "Clothes" },
-      { name: "Eyes" },
-      { name: "Hair" },
-      { name: "Accessory" },
-      { name: "Shirt Accessories" },
-    ],
+      { name: "BG" },
+      { name: "Wings"},
+      { name: "Body" },
+      { name: "Head"}
+      { name: "Hat" },
+      { name: "Mask" },
+     ],
   },
   // {
   //   growEditionSizeTo: 10,
@@ -93,9 +86,16 @@ const emptyLayerName = "NONE";
  * accidentally set incompatibilities for the _wrong_ item.
  */
 const incompatible = {
-  //   Red: ["Dark Long"],
+   Head: ["Alien dog with face ripped off","Alien Nun","Alien Witch","Anglerfish","Axolotl","Ball Mummy with Cobra and insect","Ball Mummy with Cobra","Blob Head","Blockhead","Bu77head Mutant","Clay Dimension SIlly Guy","Crazy Werewolf","Cthulu","Donald Dorko","Double Mouthed Angler Squid","Fly","FrankenAlien","Frog of Wisdom","Fruit Bat","Gang Gangar Slimer","Happy Mutant with Bone Hairdo","Ghast-Lee","HEVI44","Huey Crowley with LEGENDSHIT! Glasses","Huey Crowley","I'm too smart for this","Jester","Karloff Mummy","Mantid X","Mantid Y","Martian Attacker","Mega Cthulu","Minion Mafioso with Headphones","Miya Fett","Mochamp","Nightmare Puppeteer Camera Head","PikAlien","Plague Doctor with Skull Hat","Pteradactdyude","Rhombus Face 2023","Reptile","Santa Claus","Scarecrow with Straw Hat and Bird","Sewn face girl with Bob haircut","Sewn face girl with Crazy braids","Sewn face girl with Nurse hat and Bob haircut","Sewn face girl with Nurse hat and Crazy braids.png","Slack Jellington","Slime Daemon","Smiling Boogie","T-rex Rawr!","T-Rex Skull","Thrasherella","Tri-Eyed Cat with Circuitboard Earring by GataTECH","Triceratopzz","Uggo Bear","VelociRAWRptor","Wooden Mannequin","Zombie Bunny"],
   //   // directory incompatible with directory example
-  //   White: ["rare-Pink-Pompadour"],
+  Hat: [],
+  Mask: [],
+};
+const incompatible = {
+  Head: ["Kool Skull Deepsea Thrash Squid","Kreddy Freuger","Majin-B0000000!!!","Swampy Thang",],
+  Body: [],
+  Hat: [],
+  Mask: [],
 };
 
 /**
@@ -117,8 +117,7 @@ const forcedCombinations = {
  * clean-filename: trait-value override pairs. Wrap filenames with spaces in quotes.
  */
 const traitValueOverrides = {
-  Helmet: "Space Helmet",
-  "gold chain": "GOLDEN NECKLACE",
+  //
 };
 
 const extraMetadata = {};
